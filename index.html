@@ -5,15 +5,20 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+
     <title>Hello World!</title>
   </head>
-  <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
+  <body ng-app="app" ng-controller="MainController">
 
+    <div ng-click="test()">{{hello}}</div>     
+     
     <!-- You can also require other files to run in this process -->
     <script src="./renderer.js"></script>
+
+    <script src="src/scripts/underscore.min.js"></script>
+    <script src="src/scripts/angular.min.js"></script>
+
+    <script src="src/angular/main.js"></script>
+    <script src="src/angular/controllers/MainController.js"></script>
   </body>
 </html>

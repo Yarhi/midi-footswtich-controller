@@ -1,22 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <link rel="stylesheet/less" type="text/css" href="src/less/app.less" />
-    <title>Hello World!</title>
-  </head>
-  <body ng-app="app" ng-controller="MainController">
 
-    <div class="hello" ng-click="test()">{{hello}}</div>     
-     
-    <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
+<head>
+	<meta charset="UTF-8">
+	<!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<link rel="stylesheet/less" type="text/css" href="src/less/app.less" />
 
-    <script src="src/scripts/underscore.min.js"></script>
-    <script src="src/scripts/angular.min.js"></script>
+	<title>Footswitch Controller</title>
+</head>
 
-    <script src="src/angular/main.js"></script>
-    <script src="src/angular/controllers/MainController.js"></script>
-  </body>
+<body class="app-body" ng-app="app" ng-controller="MainController">
+
+	<div class="app-loader-wrapper" id="app-loader-wrapper">
+		<div class="app-loader">
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+
+
+	<!-- <app-wrapper> -->
+	<div class="app-wrapper" id="app-wrapper">
+
+		<div class="hello"> Hello ! </div>
+
+	</div>
+	<!-- </app-wrapper> -->
+
+	<!-- You can also require other files to run in this process -->
+	<script src="./renderer.js"></script>
+
+	<script src="src/scripts/underscore.min.js"></script>
+	<script src="src/scripts/angular.min.js"></script>
+
+	<script src="src/angular/main.js"></script>
+	<script src="src/angular/controllers/MainController.js"></script>
+</body>
+
 </html>

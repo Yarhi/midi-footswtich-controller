@@ -1,7 +1,122 @@
-body {
+// ----- Vars
 
-    .hello {
-        color: red;
-        font-family: Arial, Helvetica, sans-serif;
+// Colors
+@white     : #ffffff;
+@darkwhite : #dedede;
+@black     : hsl(0, 5%, 39%);
+@blue      : #2196f3;
+@cyan      : #00bcd4;
+@red       : #f44336;
+@pink      : #e91e63;
+@yellow    : #ffeb3b;
+@green     : #4caf50;
+
+
+body {
+    font-family: Roboto;
+
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+
+    .app-wrapper {
+        position: absolute;
+
+        top   : 0;
+        left  : 0;
+        right : 0;
+        bottom: 0;
+        margin: auto;
+
+        box-sizing: border-box;
+        padding   : 1em;
+
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+
+        .hello {
+            font-size: 5em;
+            color    : @blue;
+
+            &:after {
+                content   : '';
+                position  : absolute;
+                width     : 50%;
+                height    : 5px;
+                top       : 60%;
+                left      : 0;
+                right     : 0;
+                margin    : auto;
+                background: @blue;
+            }
+        }
+    }
+}
+
+
+
+// APP LOADER -- https://codepen.io/Fauxy/pen/LYYmKJG
+@keyframes wave {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+body {
+    .app-loader-wrapper {
+
+        position        : absolute;
+        background-color: @blue;
+
+        top   : 0;
+        left  : 0;
+        right : 0;
+        bottom: 0;
+
+        z-index: 10;
+
+        margin: auto;
+
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+
+    }
+
+    .app-loader {
+        width           : 400px;
+        height          : 400px;
+        background-color: @blue;
+        border-radius   : 50%;
+        position        : relative;
+        box-shadow      : inset 0 0 30px 0 rgba(0, 0, 0, .5), 0 4px 10px 0 rgba(0, 0, 0, .5);
+        overflow        : hidden;
+
+        &:before,
+        &:after {
+            content         : '';
+            position        : absolute;
+            width           : 400px;
+            height          : 400px;
+            top             : -150px;
+            background-color: #fff;
+        }
+
+        &:before {
+            border-radius: 45%;
+            background   : rgba(255, 255, 255, .7);
+            animation    : wave 5s linear infinite;
+        }
+
+        &:after {
+            border-radius: 35%;
+            background   : rgba(255, 255, 255, .3);
+            animation    : wave 5s linear infinite;
+        }
     }
 }

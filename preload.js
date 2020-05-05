@@ -2,15 +2,27 @@
 // It has the same sandbox as a Chrome extension.
 const eless = require('electron-less');
 
-window.addEventListener('DOMContentLoaded', () => {
-  const replaceText = (selector, text) => {
-    const element = document.getElementById(selector)
-    if (element) element.innerText = text
-  }
+console.log('loading');
 
-  for (const type of ['chrome', 'node', 'electron']) {
-    replaceText(`${type}-version`, process.versions[type])
-  }
+
+window.addEventListener('DOMContentLoaded', () => {
+  console.log('Loaded');
+
+  // Hide loaded
+  var loader = document.getElementById("app-loader-wrapper");
+  setTimeout(function() {
+    var currentOpacity = 1;
+    var hideInterval = setInterval(function() {
+		if ( currentOpacity > 0 ) {
+			currentOpacity -= 0.05;
+			loader.style.cssText = "opacity: "+ currentOpacity +";";
+		} else {
+			loader.remove();
+			clearInterval(hideInterval);
+		}
+    }, 10);
+  }, 0);
+
   
   eless({
       //options.source is required

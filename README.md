@@ -1,2 +1,11 @@
-# midi-footswtich-controller
-Simple midi footswitch controller with custom interface
+# Midi Footswitch Controller
+
+TODO
+
+## Quick start
+
+## License
+
+
+
+

@@ -155,39 +155,45 @@ PS : On utilise toujours 3 entiers parce que sinon ce serait quasi impossible de
 Si on part sur une arduino mega, on obtient un total de **105 banques**. 
 
 
+
+
+**EN FAIT CORRECTION**
+
+On a théoriquement pas besoin du "000" (seperator). Si on sait de base que chaque "commande" fait 3 bytes, alors on sait qu'une banque fait 3*12 bytes. Ca nous fait économiser de la place et on peut mettre plus de commandes du coup.
+
 # Datasheet
 
 ### System
 ```
 000     seperator
-900     prev
-901     next
-902     bank1
-903     bank2
-904     bank3
-905     bank4
-906     bank5
-907     bank6
-908     bank7
-909     bank8
-910     bank9
-911     bank10
-912     bank11
-913     bank12
-914     bank13
-915     bank14
-916     bank15
-917     bank16
-918     bank17
-919     bank18
-920     bank19
-921     bank20
-922     bank21
-923     bank22
-924     bank23
-925     bank24
-926     bank25
-927     bank26
+901     prev
+902     next
+903     bank1
+904     bank2
+905     bank3
+906     bank4
+907     bank5
+908     bank6
+909     bank7
+910     bank8
+911     bank9
+912     bank10
+913     bank11
+914     bank12
+915     bank13
+916     bank14
+917     bank15
+918     bank16
+919     bank17
+920     bank18
+921     bank19
+922     bank20
+923     bank21
+924     bank22
+925     bank23
+926     bank24
+927     bank25
+928     bank26
 ```
 
 ### Notes
@@ -308,5 +314,8 @@ Si on part sur une arduino mega, on obtient un total de **105 banques**.
 - Each bank has Prev on switch 1 and Next on switch 2
 - Switchs 3 -> 12 with random midi number 
 ```
-000900901127125123121120119118117115114000900901095094093092091090089087086085000076075074073071069068067065061
+901902127125123121120119118117115114901902095094093092091090089087086085901902076075074073071069068067065061
 ```
+
+
+

@@ -300,3 +300,13 @@ Si on part sur une arduino mega, on obtient un total de **105 banques**.
 022 	A#0
 021 	A0
 ```
+
+
+### Example data 
+(112 bytes)
+- Three banks
+- Each bank has Prev on switch 1 and Next on switch 2
+- Switchs 3 -> 12 with random midi number 
+```
+000900901127125123121120119118117115114000900901095094093092091090089087086085000076075074073071069068067065061
+```
